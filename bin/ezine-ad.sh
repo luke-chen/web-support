@@ -1,16 +1,14 @@
 #! /bin/sh
-#
-# ezine-ad init script
-#
-
 ### BEGIN INIT INFO
+#
 # Provides:          ezine-ad
-# Required-Start:    $syslog
-# Required-Stop:     $syslog
-# Should-Start:      $local_fs
-# Should-Stop:       $local_fs
-# Short-Description: Monitor for liandong admin activity
-# Description:       ezine-ad is nginx server.
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: initscript
+# Description:       This file should be used to construct scripts to be placed in /etc/init.d.
+#
 ### END INIT INFO
 
 # **NOTE** bash will exit immediately if any command exits with non-zero.
@@ -91,7 +89,7 @@ case "$1" in
     start_app
     ;;
   stop_app)
-    stop_app;
+    stop_app
     ;;
   restart_app)
     restart_app
